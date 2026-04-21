@@ -1,4 +1,5 @@
-import Menu from "@/compoments/Menu";
+import Section from "@/compoments/shared/Section";
+import Menu from "@/compoments/ui/Menu";
 import React from "react";
 
 export default async function RootLayout({
@@ -8,8 +9,10 @@ export default async function RootLayout({
 }) {
     return (
         <>
-            <Menu/>
-            {children}
+            <Menu />
+            <Section>
+                {children}
+            </Section>
         </>
     );
 }
