@@ -1,0 +1,43 @@
+
+const useProfile = () => {
+
+  const stackCategories = [
+      {
+          id: "frontend",
+          title: "Frontend Development",
+          bgColor: "bg-[#bbf7d0]",
+          techs: [
+              { name: "React", color: "bg-sky-500" },
+              { name: "Next.js", color: "bg-zinc-900" },
+              { name: "Tailwind CSS", color: "bg-teal-500" },
+          ],
+      },
+      {
+          id: "backend",
+          title: "Backend & Core",
+          bgColor: "bg-[#fed7aa]",
+          techs: [
+              { name: "Java", color: "bg-orange-600" },
+              { name: "C#", color: "bg-purple-600" },
+              { name: "Python", color: "bg-teal-600 " },
+          ],
+      },
+      {
+          id: "architecture",
+          title: "Architecture & Cloud",
+          bgColor: "bg-[#e9d5ff]",
+          techs: [
+              { name: "Microservices", color: "bg-indigo-600" },
+              { name: "AWS", color: "bg-yellow-600" },
+              { name: "Redis", color: "bg-red-500" },
+              { name: "Eureka", color: "bg-emerald-600" },
+              { name: "API Gateway", color: "bg-blue-600" },
+              { name: "Load Balancer", color: "bg-gray-600" },
+          ],
+      },
+  ];
+
+    return [stackCategories];
+};
+
+export default useProfile;

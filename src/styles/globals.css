@@ -12,15 +12,19 @@
 }
 
 :root {
-  --background: #EEEEEE;
-  --foreground: #111111;
+  --background: #ffffff;
+  --foreground: #000000;
   --card: #f9fafb;
   --border: #e5e7eb;
 }
 
 .dark {
-  --background: #0f172a;
-  --foreground: #e5e7eb;
-  --card: #111827;
-  --border: rgba(255, 255, 255, 0.08);
+  --background: #0b0118;
+  --foreground: #ffffff;
+  --card: #140326;
+  --border: rgba(255, 255, 255, 0.06);
+}
+
+::selection {
+  background-color: rgba(168, 85, 247, 0.3);
 }

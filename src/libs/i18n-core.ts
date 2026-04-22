@@ -3,7 +3,7 @@ import en from "@/messages/en.json";
 import vi from "@/messages/vi.json";
 
 // --- Constants ---
-export const DEFAULT_LANG = "vi" as const;
+export const DEFAULT_LANG = "en" as const;
 export const LANG_MAP = {
   en,
   vi,

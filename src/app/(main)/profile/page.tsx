@@ -1,8 +1,9 @@
+import React from "react";
+import ProfileContainer from "@/features/profile/ProfileContainer";
+
 const Page = () => {
     return (
-            <div className="h-[200vh]">
-                <h1>Profile khhjh</h1>
-            </div>
+        <ProfileContainer />
     );
 };
 

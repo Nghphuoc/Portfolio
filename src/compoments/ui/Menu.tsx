@@ -3,8 +3,10 @@ import React, { useState } from "react";
 import DarkMode from "@/compoments/shared/DarkMode";
 import Button from "@/compoments/shared/Button";
 import { Menu as MenuIcon, X } from "lucide-react";
+import { useTranslation } from "@/contexts/TranslationContext";
 
 const Menu = () => {
+    const {t} = useTranslation();
     const [activeMenu, setActiveMenu] = useState("PROFILE");
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
     const menuItems = ["PROFILE", "SERVICES", "WORKS", "NOTES", "EXPERIENCE"];
@@ -28,11 +30,11 @@ const Menu = () => {
 
         return (
             <>
-                <span className="font-normal text-lg mb-0.5 text-[#2D786D] dark:text-teal-400 drop-shadow-md">
+                <span className="font-normal text-lg mb-0.5 dark:text-teal-400 drop-shadow-md">
                     [
                 </span>
                 {item}
-                <span className="font-normal text-lg mb-0.5 text-[#2D786D] dark:text-teal-400 drop-shadow-md">
+                <span className="font-normal text-lg mb-0.5 dark:text-teal-400 drop-shadow-md">
                     ]
                 </span>
             </>
@@ -42,7 +44,7 @@ const Menu = () => {
     return (
         <nav className={glassNavClasses}>
             {/* Logo */}
-            <div className="font-['Caveat',cursive] text-3xl sm:text-4xl font-semibold text-[#1c3240] hover:text-teal-400 hover:border-white/90 dark:text-white tracking-wide cursor-pointer drop-shadow-sm">
+            <div className="font-['Caveat',cursive] text-3xl sm:text-4xl font-semibold hover:text-teal-400 hover:border-white/90 dark:text-white tracking-wide cursor-pointer drop-shadow-sm">
                 Jayki
             </div>
 
@@ -59,8 +61,8 @@ const Menu = () => {
                                     setActiveMenu(item);
                                 }}
                                 className={`
-                                  text-xs font-bold tracking-[0.5px] transition-all duration-300 flex items-center gap-1.5 drop-shadow-sm
-                                  ${isActive ? "text-[#166357] dark:text-teal-400" : "text-[#4A555A] dark:text-gray-300 hover:text-[#2D786D] dark:hover:text-teal-300 hover:-translate-y-0.5"}
+                                  text-[14px] font-bold tracking-[0.5px] transition-all duration-300 flex items-center gap-1.5 drop-shadow-sm
+                                  ${isActive ? "text-[#166357] dark:text-teal-400" : "hover:text-[#2D786D] dark:hover:text-teal-300 hover:-translate-y-0.5"}
                                 `}
                             >
                                 {renderMenuText(isActive, item)}
@@ -72,26 +74,24 @@ const Menu = () => {
 
             {/* Contact Section & Mobile Controls */}
             <div className="flex items-center gap-2 sm:gap-5">
-                <span className="text-sm font-bold text-[#1c3240] dark:text-gray-200 hidden xl:block drop-shadow-sm">
-                    +84 (858) 179 329
-                </span>
-
-                <Button className={neumorphismBtnClasses}>
-                    <svg
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="w-4 h-4 sm:w-5 sm:h-5 drop-shadow-sm text-[#2D786D] dark:text-teal-400"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                        ></path>
-                    </svg>
-                </Button>
+                <a href={t("profile.infomation.contact.zalo")} target="_blank" rel="noopener noreferrer">
+                    <Button className={neumorphismBtnClasses}>
+                        <svg
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-4 h-4 sm:w-5 sm:h-5 drop-shadow-sm text-[#2D786D] dark:text-teal-400"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                            ></path>
+                        </svg>
+                    </Button>
+                </a>
 
                 <DarkMode />
 
@@ -139,6 +139,7 @@ const Menu = () => {
                     </ul>
                 </div>
             )}
+            
         </nav>
     );
 };
