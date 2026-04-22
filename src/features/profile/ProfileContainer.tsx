@@ -1,13 +1,17 @@
+"use client";
+import { useTranslation } from "@/contexts/TranslationContext";
 import useProfile from "@/features/profile/hooks/useProfile";
 import ProfileForm from "@/features/profile/ProfileForm";
 
 const ProfileContainer = () => {
-  const [categories] = useProfile();
+  const { t } = useTranslation();
+  const { stackCategories, competitionParticipated } = useProfile(t);
 
   return (
-    <>
-      <ProfileForm stackCategories={categories} />
-    </>
+      <>
+          <ProfileForm categories={stackCategories} 
+          competitionParticipated={competitionParticipated} />
+      </>
   );
 }
 

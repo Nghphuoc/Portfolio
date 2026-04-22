@@ -1,5 +1,6 @@
 import Section from "@/compoments/shared/Section";
-import Menu from "@/compoments/ui/Menu";
+import Footer from "@/compoments/shared/Footer";
+import Menu from "@/compoments/shared/Menu";
 import React from "react";
 
 export default async function RootLayout({
@@ -13,6 +14,7 @@ export default async function RootLayout({
             <Section>
                 {children}
             </Section>
+            <Footer />
         </>
     );
 }

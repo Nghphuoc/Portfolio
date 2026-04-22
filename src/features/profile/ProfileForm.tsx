@@ -2,15 +2,16 @@
 import React from "react";
 import Image from "next/image";
 import PersionIcon from "@/assets/persion.png";
-import Card from "@/compoments/ui/Card";
+import Card, { CardProps } from "@/compoments/ui/Card";
 import { useTranslation } from "@/contexts/TranslationContext";
 import BlockyCard, { CategoryData } from "@/compoments/ui/BlockyCard";
 
 type ProfileFormProps = {
-    stackCategories: CategoryData[];
+    categories: CategoryData[];
+    competitionParticipated?: CardProps[];
 };
 
-const ProfileForm = ({ stackCategories }: ProfileFormProps) => {
+const ProfileForm = ({ categories, competitionParticipated }: ProfileFormProps) => {
   const { t } = useTranslation();
 
     return (
@@ -73,9 +74,7 @@ const ProfileForm = ({ stackCategories }: ProfileFormProps) => {
                     </h2>
 
                     <div className="flex items-center gap-2 text-xl md:text-2xl">
-                        <span>
-                            Currently, Im a Software Engineer at {t("profile.infomation.currentWork")}
-                        </span>
+                        <span>{t("profile.infomation.currentWork")}</span>
                     </div>
 
                     <p className="text-lg md:text-2xl leading-relaxed font-light">
@@ -84,21 +83,27 @@ const ProfileForm = ({ stackCategories }: ProfileFormProps) => {
                 </div>
             </div>
 
-            <div className="flex flex-row items-center gap-8 mt-20">
-                {/* SECTION 3: HACKATHON EXPERIENCE */}
-                <Card
-                    title={t("profile.hackathon.title")}
-                    description={t("profile.hackathon.description")}
-                    imageSrc={PersionIcon}
-                />
-                <Card
-                    title={t("profile.hackathon.title")}
-                    description={t("profile.hackathon.description")}
-                    imageSrc={PersionIcon}
-                />
+            <h2
+                className="text-4xl font-black text-shadow-purple-800 mb-10 uppercase tracking-tight text-center mt-20"
+            >
+                competition participated
+            </h2>
+
+            <div className="grid grid-cols-1 xl:grid-cols-2 3xl:grid-cols-3 gap-8">
+                {competitionParticipated &&
+                    competitionParticipated.map((comp, index) => (
+                        <Card
+                            key={index}
+                            title={comp.title}
+                            description={comp.description}
+                            imageSrc={comp.imageSrc}
+                            imageAlt={comp.imageAlt}
+                            className={comp.className}
+                        />
+                    ))}
             </div>
 
-            <BlockyCard categories={stackCategories} />
+            <BlockyCard categories={categories} />
         </div>
     );
 };

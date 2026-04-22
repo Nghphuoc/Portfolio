@@ -1,14 +1,15 @@
 {
     "welcome": "Welcome to My App",
     "description": "This is a simple Next.js app.",
+    "nameAuthor": "Nguyen Huu Phuoc",
 
     "profile": {
-        "infomation":{
+        "infomation": {
             "role": "I'm a Software Engineer",
             "location": "Hồ Chí Minh, Vietnam",
             "yearsOfExperience": "Có hơn 3 năm kinh nghiệm trong phát triển phần mềm",
             "summary": "Tôi là một kỹ sư phần mềm full-stack với hơn 1+ năm kinh nghiệm, đam mê xây dựng các giải pháp phần mềm có tác động mạnh mẽ và luôn sẵn sàng học hỏi các công nghệ mới.",
-            "currentWork": "TeamSolutions VietNam",
+            "currentWork": "Hiện tại, tôi là một Kỹ sư Phần mềm tại TeamSolutions Việt Nam",
             "contact": {
                 "zalo": "https://zalo.me/0858179329",
                 "email": "huuphuoc@example.com",
@@ -17,8 +18,8 @@
             }
         },
         "hackathon": {
-            "title": "Kinh nghiệm Hackathon",
-            "description": "Tham gia vào nhiều cuộc thi hackathon, thể hiện kỹ năng và sự sáng tạo của mình."
+            "title": "Global Hackathon 2024",
+            "description": "Tham gia cuộc thi hackathon, thể hiện kỹ năng và sự sáng tạo của bạn trong việc xây dựng một trang web học ngôn ngữ trong vòng 48 giờ."
         },
         "projects": {
             "title": "Dự án",

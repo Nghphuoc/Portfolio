@@ -19,8 +19,7 @@ const BlockyCard: React.FC<BlockyProps> = ({ categories }) => {
         <div className="flex items-center justify-center font-sans">
             <div className="max-w-5xl w-full">
                 <h2
-                    className="text-4xl font-black text-shadow-purple-800 mb-10 uppercase tracking-tight text-center"
-                    style={{ textShadow: "4px 4px 0px #cbd5e1" }}
+                    className="text-4xl font-black text-shadow-purple-800 mb-10 uppercase tracking-tight text-center mt-20"
                 >
                     My Tech Stack
                 </h2>
@@ -39,12 +38,11 @@ const BlockyCard: React.FC<BlockyProps> = ({ categories }) => {
                                 ${category.id === "architecture" ? "md:col-span-2 lg:col-span-1" : ""}
                             `}
                         >
-                            {/* Tiêu đề khối */}
+
                             <h3 className="text-xl font-bold text-gray-900 mb-6 border-b-4 border-gray-900 pb-2 inline-block">
                                 {category.title}
                             </h3>
 
-                            {/* Các viên gạch (Tags) công nghệ bên trong */}
                             <div className="flex flex-wrap gap-3">
                                 {category.techs.map((tech) => (
                                     <span

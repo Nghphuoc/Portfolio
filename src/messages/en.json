@@ -1,6 +1,7 @@
 {
     "welcome": "Welcome to My App",
     "description": "This is a simple Next.js app.",
+    "nameAuthor": "Nguyen Huu Phuoc",
 
     "profile": {
         "infomation":{
@@ -8,7 +9,7 @@
             "location": "Ho Chi Minh City, Vietnam",
             "yearsOfExperience": "3+ years of experience in software development",
             "summary": "I am a full-stack software engineer with over 1+ year of experience, passionate about building impactful software solutions and always eager to learn new technologies.",
-            "currentWork": "TeamSolutions VietNam",
+            "currentWork": "Currently, I'm a Software Engineer at TeamSolutions VietNam",
             "contact": {
                 "zalo": "https://zalo.me/0858179329",
                 "email": "huuphuoc@example.com",
@@ -17,8 +18,8 @@
             }
         },
         "hackathon": {
-            "title": "Hackathon Experience",
-            "description": "Participated in various hackathons, showcasing my skills and creativity."
+            "title": "Global Hackathon 2024",
+            "description": "Participate in the hackathon and showcase your skills and creativity in building a language learning website within 48 hours."
         },
         "projects": {
             "title": "Projects",
