@@ -1,6 +1,6 @@
-import Section from "@/compoments/shared/Section";
-import Footer from "@/compoments/shared/Footer";
-import Menu from "@/compoments/shared/Menu";
+import Section from "@/components/shared/Section";
+import Footer from "@/components/shared/Footer";
+import Menu from "@/components/shared/Menu";
 import React from "react";
 
 export default async function RootLayout({

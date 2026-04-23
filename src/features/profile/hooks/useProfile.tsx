@@ -8,7 +8,9 @@ const useProfile = (t: (key: string) => string) => {
             bgColor: "bg-[#bbf7d0]",
             techs: [
                 { name: "React", color: "bg-sky-500" },
-                { name: "Next.js", color: "bg-zinc-900" },
+                { name: "Next.js", color: "bg-zinc-500" },
+                { name: "Type Script", color: "bg-blue-500" },
+                { name: "HTML", color: "bg-orange-500" },
                 { name: "Tailwind CSS", color: "bg-teal-500" },
             ],
         },
@@ -44,6 +46,8 @@ const useProfile = (t: (key: string) => string) => {
             imageSrc: ImageHackathon,
             imageAlt: "global hackathon 2024",
             className: "",
+            linkHref: "/profile/hackathon",
+            linkText: "Visit Global Hackathon",
         },
         {
             title: t("profile.hackathon.title"),

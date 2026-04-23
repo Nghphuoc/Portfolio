@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import DarkMode from "@/compoments/shared/DarkMode";
-import Button from "@/compoments/shared/Button";
+import DarkMode from "@/components/shared/DarkMode";
+import Button from "@/components/shared/Button";
 import { Menu as MenuIcon, X } from "lucide-react";
 import { useTranslation } from "@/contexts/TranslationContext";
 

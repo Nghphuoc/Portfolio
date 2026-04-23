@@ -3,6 +3,19 @@
     "description": "This is a simple Next.js app.",
     "nameAuthor": "Nguyen Huu Phuoc",
 
+    "common": {
+        "home": "Home",
+        "profile": "Profile",
+        "projects": "Projects",
+        "skills": "Skills",
+        "education": "Education",
+        "experience": "Experience",
+        "contact": "Contact",
+        "languages": "Languages",
+        "readMore": "Read more",
+        "backToProfile": "Back to Profile"
+    },
+
     "profile": {
         "infomation":{
             "role": "I'm a Software Engineer",
@@ -18,6 +31,8 @@
             }
         },
         "hackathon": {
+            "introduction": "Introduction video",
+            "relatedArticles": "Related articles",
             "title": "Global Hackathon 2024",
             "description": "Participate in the hackathon and showcase your skills and creativity in building a language learning website within 48 hours."
         },

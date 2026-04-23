@@ -2,9 +2,10 @@
 import React from "react";
 import Image from "next/image";
 import PersionIcon from "@/assets/persion.png";
-import Card, { CardProps } from "@/compoments/ui/Card";
+import Card, { CardProps } from "@/components/ui/Card";
 import { useTranslation } from "@/contexts/TranslationContext";
-import BlockyCard, { CategoryData } from "@/compoments/ui/BlockyCard";
+import BlockyCard, { CategoryData } from "@/components/ui/BlockyCard";
+import StaticPDFDownload from "@/components/ui/StaticDownLoad";
 
 type ProfileFormProps = {
     categories: CategoryData[];
@@ -83,9 +84,7 @@ const ProfileForm = ({ categories, competitionParticipated }: ProfileFormProps) 
                 </div>
             </div>
 
-            <h2
-                className="text-4xl font-black text-shadow-purple-800 mb-10 uppercase tracking-tight text-center mt-20"
-            >
+            <h2 className="text-4xl font-black text-shadow-purple-800 mb-10 uppercase tracking-tight text-center mt-20">
                 competition participated
             </h2>
 
@@ -99,11 +98,20 @@ const ProfileForm = ({ categories, competitionParticipated }: ProfileFormProps) 
                             imageSrc={comp.imageSrc}
                             imageAlt={comp.imageAlt}
                             className={comp.className}
+                            linkHref={comp.linkHref}
+                            linkText={comp.linkText}
+                            onLinkClick={comp.onLinkClick}
                         />
                     ))}
             </div>
 
             <BlockyCard categories={categories} />
+
+            <StaticPDFDownload
+                url="/documents/resume.pdf"
+                fileName="Nguyen_Huu_Phuoc_Full-Stack.pdf"
+                label="Download Resume"
+            />
         </div>
     );
 };

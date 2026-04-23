@@ -3,6 +3,19 @@
     "description": "This is a simple Next.js app.",
     "nameAuthor": "Nguyen Huu Phuoc",
 
+    "common": {
+        "home": "Trang chủ",
+        "profile": "Hồ sơ",
+        "projects": "Dự án",
+        "skills": "Kỹ năng",
+        "education": "Giáo dục",
+        "experience": "Kinh nghiệm",
+        "contact": "Liên hệ",
+        "languages": "Ngôn ngữ",
+        "readMore": "Đọc thêm",
+        "backToProfile": "Quay lại hồ sơ"
+    },
+
     "profile": {
         "infomation": {
             "role": "I'm a Software Engineer",
@@ -18,6 +31,8 @@
             }
         },
         "hackathon": {
+            "introduction": "Video giới thiệu",
+            "relatedArticles": "Bài viết liên quan",
             "title": "Global Hackathon 2024",
             "description": "Tham gia cuộc thi hackathon, thể hiện kỹ năng và sự sáng tạo của bạn trong việc xây dựng một trang web học ngôn ngữ trong vòng 48 giờ."
         },
