@@ -60,5 +60,13 @@
             "title": "Languages",
             "description": "A list of languages I speak, along with my proficiency levels."
         }
+    },
+
+    "workExperience": {
+        "title": "Work Experience",
+        "company": "Company",
+        "duration": "Duration",
+        "description": "Key Responsibilities",
+        "technologies": "Technologies Used"
     }
 }

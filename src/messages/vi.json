@@ -60,5 +60,13 @@
             "title": "Ngôn ngữ",
             "description": "Danh sách các ngôn ngữ tôi biết, cùng với trình độ thành thạo của từng ngôn ngữ."
         }
+    },
+
+    "workExperience": {
+        "title": "Kinh nghiệm làm việc",
+        "company": "Công ty",
+        "duration": "Thời gian",
+        "description": "Trách nhiệm chính",
+        "technologies": "Công nghệ được sử dụng"
     }
 }
