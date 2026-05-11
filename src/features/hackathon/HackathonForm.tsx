@@ -1,34 +1,14 @@
 "use client";
-import ArticleGrid from "@/components/ui/ArticleGrid";
+import ArticleGrid, { ArticleItem } from "@/components/ui/ArticleGrid";
 import VideoPlayer from "@/components/ui/VideoPlayer";
 
 type HackathonFormProps = {
     videoUrl: string;
     t: (key: string) => string;
+    articles: ArticleItem[];
 };
 
-export default function HackathonForm({ videoUrl, t }: HackathonFormProps) {
-
-  const relatedArticles = [
-      {
-          id: 1,
-          title: "Kinh nghiệm xương máu khi tham gia Hackathon cho người mới bắt đầu",
-          date: "20/04/2026",
-          link: "/blog/kinh-nghiem-hackathon",
-      },
-      {
-          id: 2,
-          title: "Tổng hợp các dự án công nghệ đột phá đạt giải cao nhất năm ngoái",
-          date: "15/04/2026",
-          link: "/blog/du-an-dot-pha",
-      },
-      {
-          id: 3,
-          title: "Hướng dẫn tối ưu hóa hiệu suất ứng dụng Next.js trong 24 giờ",
-          date: "10/04/2026",
-          link: "/blog/toi-uu-nextjs",
-      },
-  ];
+export default function HackathonForm({ videoUrl, t, articles }: HackathonFormProps) {
 
     return (
         <div className="p-8">
@@ -56,16 +36,14 @@ export default function HackathonForm({ videoUrl, t }: HackathonFormProps) {
 
             {/* NEW: Vùng chứa Bài viết liên quan (Related Articles) */}
             <div className="w-full max-w-6xl mx-auto mt-6">
-
                 <h2 className="text-xl font-semibold mb-4 border-b border-gray-800 pb-2">
                     {t("profile.hackathon.relatedArticles")}
                 </h2>
 
                 <ArticleGrid
-                    articles={relatedArticles}
+                    articles={articles}
                     readMoreText={t("common.readMore")}
                 />
-
             </div>
         </div>
     );

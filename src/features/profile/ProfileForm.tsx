@@ -17,7 +17,7 @@ const ProfileForm = ({ categories, competitionParticipated }: ProfileFormProps) 
 
     return (
         <div className="min-h-screen dark:bg-[#0b0118] dark:text-white selection:bg-purple-500/30 font-sans px-8 flex flex-col items-center gap-3.5">
-            <div className="max-w-5xl w-full">
+            <div className="">
                 {/* SECTION 1: HERO AREA */}
                 <div className="flex flex-col md:flex-row items-center gap-16 mb-24">
                     {/* Avatar side with Glow effect */}
