@@ -1,14 +1,16 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import DarkMode from "@/components/shared/DarkMode";
 import Button from "@/components/shared/Button";
 import { Menu as MenuIcon, X } from "lucide-react";
 import { useTranslation } from "@/contexts/TranslationContext";
 
 const Menu = () => {
-    const {t} = useTranslation();
-    const [activeMenu, setActiveMenu] = useState("PROFILE");
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); 
+    const { t } = useTranslation();
+    const pathname = usePathname();
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const menuItems = ["PROFILE", "SERVICES", "WORKS", "NOTES", "EXPERIENCE"];
 
     const glassNavClasses = `
@@ -45,28 +47,28 @@ const Menu = () => {
         <nav className={glassNavClasses}>
             {/* Logo */}
             <div className="font-['Caveat',cursive] text-3xl sm:text-4xl font-semibold hover:text-teal-400 hover:border-white/90 dark:text-white tracking-wide cursor-pointer drop-shadow-sm">
-                Jayki
+                <Link href="/">Jayki</Link>
             </div>
 
             {/* Menu Links (Desktop / Tablet) */}
             <ul className="hidden lg:flex items-center gap-10 m-0 p-0 list-none">
                 {menuItems.map((item) => {
-                    const isActive = activeMenu === item;
+                    const itemPath = `/${item.toLowerCase()}`;
+                    const isActive =
+                        pathname === itemPath ||
+                        (pathname === "/" && item === "PROFILE");
+
                     return (
                         <li key={item} className="flex items-center">
-                            <a
-                                href={`#${item.toLowerCase()}`}
-                                onClick={(e) => {
-                                    e.preventDefault();
-                                    setActiveMenu(item);
-                                }}
+                            <Link
+                                href={itemPath}
                                 className={`
                                   text-[14px] font-bold tracking-[0.5px] transition-all duration-300 flex items-center gap-1.5 drop-shadow-sm
                                   ${isActive ? "text-[#166357] dark:text-teal-400" : "hover:text-[#2D786D] dark:hover:text-teal-300 hover:-translate-y-0.5"}
                                 `}
                             >
                                 {renderMenuText(isActive, item)}
-                            </a>
+                            </Link>
                         </li>
                     );
                 })}
@@ -74,7 +76,11 @@ const Menu = () => {
 
             {/* Contact Section & Mobile Controls */}
             <div className="flex items-center gap-2 sm:gap-5">
-                <a href={t("profile.infomation.contact.zalo")} target="_blank" rel="noopener noreferrer">
+                <a
+                    href={t("profile.infomation.contact.zalo")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     <Button className={neumorphismBtnClasses}>
                         <svg
                             fill="none"
@@ -113,33 +119,34 @@ const Menu = () => {
                 <div className="absolute top-[110%] left-0 w-full lg:hidden bg-white/80 dark:bg-black/80 backdrop-blur-2xl rounded-2xl border border-white/50 dark:border-gray-700 shadow-2xl p-5 z-50 animate-in fade-in slide-in-from-top-5 duration-300">
                     <ul className="flex flex-col items-center gap-6 m-0 p-0 list-none">
                         {menuItems.map((item) => {
-                            const isActive = activeMenu === item;
+                            const itemPath = `/${item.toLowerCase()}`;
+                            const isActive =
+                                pathname === itemPath ||
+                                (pathname === "/" && item === "PROFILE");
+
                             return (
                                 <li
                                     key={item}
                                     className="flex items-center w-full justify-center"
                                 >
-                                    <a
-                                        href={`#${item.toLowerCase()}`}
-                                        onClick={(e) => {
-                                            e.preventDefault();
-                                            setActiveMenu(item);
-                                            setIsMobileMenuOpen(false);
-                                        }}
+                                    <Link
+                                        href={itemPath}
+                                        onClick={() =>
+                                            setIsMobileMenuOpen(false)
+                                        }
                                         className={`
                                           text-sm font-bold tracking-[1px] transition-all duration-300 flex items-center gap-1.5 drop-shadow-sm
                                           ${isActive ? "text-[#166357] dark:text-teal-400" : "text-[#4A555A] dark:text-gray-300 hover:text-[#2D786D] dark:hover:text-teal-300"}
                                         `}
                                     >
                                         {renderMenuText(isActive, item)}
-                                    </a>
+                                    </Link>
                                 </li>
                             );
                         })}
                     </ul>
                 </div>
             )}
-            
         </nav>
     );
 };
